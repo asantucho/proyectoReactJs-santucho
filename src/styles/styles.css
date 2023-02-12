@@ -1,4 +1,61 @@
-.cart-icon {
-  width: 20px;
-  height: 20px;
+header .navbar .container-fluid .navbar-brand {
+  text-decoration: underline;
+}
+header .navbar .container-fluid .navbar-collapse {
+  justify-content: end;
+}
+header .navbar .container-fluid .navbar-collapse .d-flex {
+  justify-content: flex-end;
+}
+header .navbar .container-fluid .navbar-collapse .d-flex .navbar-nav .nav-item {
+  margin: 0.5%;
+  font-weight: bold;
+}
+header .navbar .container-fluid .navbar-collapse form {
+  margin: 1%;
+}
+header .navbar .container-fluid .navbar-collapse form .form-control {
+  border: 1px solid black;
+}
+header .navbar .container-fluid .navbar-collapse form .btn {
+  font-weight: bold;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+}
+.nav-link .cart-icon {
+  width: 25px;
+  height: 25px;
+}
+.nav-link .product-amount {
+  display: inline-block;
+  position: relative;
+}
+.nav-link .product-amount .product-amount-notification {
+  background-color: #7ca982;
+  color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  top: -5px;
+  right: -7px;
+}
+
+main {
+  background: rgb(238, 246, 246);
+  background: linear-gradient(90deg, rgb(238, 246, 246) 0%, rgb(92, 158, 18) 86%);
+}
+main .item-list-container {
+  font-size: 200%;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

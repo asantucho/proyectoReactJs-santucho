@@ -1,0 +1,14 @@
+main {
+  background: rgb(238, 246, 246);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 246, 246, 1) 0%,
+    rgba(92, 158, 18, 1) 86%
+  );
+  .item-list-container {
+    font-size: 200%;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

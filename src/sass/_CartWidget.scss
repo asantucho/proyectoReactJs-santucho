@@ -1,4 +1,27 @@
-.cart-icon {
-  width: 20px;
-  height: 20px;
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  .cart-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .product-amount {
+    display: inline-block;
+    position: relative;
+    .product-amount-notification {
+      background-color: #7ca982;
+      color: white;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      font-weight: bold;
+      position: absolute;
+      top: -5px;
+      right: -7px;
+    }
+  }
 }

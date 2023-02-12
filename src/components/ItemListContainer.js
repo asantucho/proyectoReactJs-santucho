@@ -1,11 +1,10 @@
 import React from 'react';
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
   return (
-    <div>
-      Oops! You came in too soon. We are currently building the website. Come
-      back soon to get to know us and our products.
-    </div>
+    <main>
+      <div className='item-list-container'>{props.greeting}</div>
+    </main>
   );
 };
 

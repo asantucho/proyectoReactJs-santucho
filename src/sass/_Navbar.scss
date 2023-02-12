@@ -1,0 +1,30 @@
+header {
+  .navbar {
+    .container-fluid {
+      .navbar-brand {
+        text-decoration: underline;
+      }
+      .navbar-collapse {
+        justify-content: end;
+        .d-flex {
+          justify-content: flex-end;
+          .navbar-nav {
+            .nav-item {
+              margin: 0.5%;
+              font-weight: bold;
+            }
+          }
+        }
+        form {
+          margin: 1%;
+          .form-control {
+            border: 1px solid black;
+          }
+          .btn {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

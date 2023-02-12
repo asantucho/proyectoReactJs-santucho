@@ -21,23 +21,23 @@ const Navbar = () => {
             <span class='navbar-toggler-icon'></span>
           </button>
           <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-              <li class='nav-item'>
-                <a class='nav-link active' aria-current='page' href='#'>
-                  Home
-                </a>
-              </li>
-              <li class='nav-item'>
-                <a class='nav-link active' aria-current='page' href='#'>
-                  Trending
-                </a>
-              </li>
-              <li class='nav-item'>
-                <a class='nav-link active' aria-current='page' href='#'>
-                  <CartWidget />
-                </a>
-              </li>
-            </ul>
+            <div class='d-flex justify-content-end'>
+              <ul class='navbar-nav mb-2 mb-lg-0'>
+                <li class='nav-item'>
+                  <a class='nav-link active' aria-current='page' href='#'>
+                    Home
+                  </a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link active' aria-current='page' href='#'>
+                    Trending
+                  </a>
+                </li>
+                <li class='nav-item'>
+                  <CartWidget number='5' />
+                </li>
+              </ul>
+            </div>
             <form class='d-flex'>
               <input
                 class='form-control me-2'
