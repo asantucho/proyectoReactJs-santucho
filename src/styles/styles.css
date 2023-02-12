@@ -6,10 +6,8 @@ header .navbar .container-fluid .navbar-brand {
 header .navbar .container-fluid .navbar-collapse {
   justify-content: end;
 }
-header .navbar .container-fluid .navbar-collapse .d-flex {
-  justify-content: flex-end;
-}
-header .navbar .container-fluid .navbar-collapse .d-flex .navbar-nav .nav-item {
+header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item {
+  width: 6vw;
   margin: 0.5%;
   font-weight: bold;
 }
@@ -23,19 +21,20 @@ header .navbar .container-fluid .navbar-collapse form .btn {
   font-weight: bold;
 }
 
-.nav-link {
+.cart-widget {
   display: flex;
   flex-direction: row;
+  width: 2vw;
 }
-.nav-link .cart-icon {
+.cart-widget .cart-icon {
   width: 25px;
   height: 25px;
 }
-.nav-link .product-amount {
+.cart-widget .product-amount {
   display: inline-block;
   position: relative;
 }
-.nav-link .product-amount .product-amount-notification {
+.cart-widget .product-amount .product-amount-notification {
   background-color: #7ca982;
   color: white;
   border-radius: 50%;

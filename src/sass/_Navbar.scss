@@ -9,13 +9,11 @@ header {
       }
       .navbar-collapse {
         justify-content: end;
-        .d-flex {
-          justify-content: flex-end;
-          .navbar-nav {
-            .nav-item {
-              margin: 0.5%;
-              font-weight: bold;
-            }
+        .navbar-nav {
+          .nav-item {
+            width: 6vw;
+            margin: 0.5%;
+            font-weight: bold;
           }
         }
         form {
