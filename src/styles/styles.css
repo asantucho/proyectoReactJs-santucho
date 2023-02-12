@@ -1,5 +1,7 @@
 header .navbar .container-fluid .navbar-brand {
-  text-decoration: underline;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 150%;
 }
 header .navbar .container-fluid .navbar-collapse {
   justify-content: end;
@@ -50,8 +52,8 @@ header .navbar .container-fluid .navbar-collapse form .btn {
 }
 
 main {
-  background: rgb(238, 246, 246);
-  background: linear-gradient(90deg, rgb(238, 246, 246) 0%, rgb(92, 158, 18) 86%);
+  background: rgb(238, 246, 238);
+  background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
 }
 main .item-list-container {
   font-size: 200%;

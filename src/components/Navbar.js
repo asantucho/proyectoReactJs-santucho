@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <div class='container-fluid'>
           <a class='navbar-brand mb-0 h1' href='#'>
-            The Beauty Box
+            THE BEAUTY BOX
           </a>
           <button
             class='navbar-toggler'
