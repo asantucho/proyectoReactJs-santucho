@@ -1,11 +1,12 @@
 import React from 'react';
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
   return (
     <header>
       <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <div class='container-fluid'>
-          <a class='navbar-brand' href='#'>
+          <a class='navbar-brand mb-0 h1' href='#'>
             The Beauty Box
           </a>
           <button
@@ -33,7 +34,7 @@ const Navbar = () => {
               </li>
               <li class='nav-item'>
                 <a class='nav-link active' aria-current='page' href='#'>
-                  Cart
+                  <CartWidget />
                 </a>
               </li>
             </ul>
