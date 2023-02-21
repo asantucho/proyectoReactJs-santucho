@@ -60,4 +60,40 @@ main .item-list-container {
   font-weight: bold;
   line-height: 1.5;
   text-align: center;
+}
+
+.count-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.count-container .amount-container {
+  display: flex;
+  width: 35vw;
+}
+.count-container .amount-container .count-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+  border: solid black 2px;
+  background-color: white;
+  font-size: medium;
+  font-weight: bold;
+}
+.count-container .amount-container .count-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.count-container .add-cart-button-container {
+  display: flex;
+}
+.count-container .add-cart-button-container .add-cart {
+  height: 100%;
+  background-color: red;
 }/*# sourceMappingURL=styles.css.map */
