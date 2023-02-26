@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = (props) => {
   return (
-    <Link className='nav-link active' aria-current='page'>
+    <Link to={'/cart'} className='nav-link active' aria-current='page'>
       <img className='cart-icon' src={CartIcon} alt='Cart icon' />
       <div className='product-amount'>
         <span className='product-amount-notification'>{props.number}</span>

@@ -3,15 +3,19 @@ import CartWidget from './CartWidget';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import TBBLogo from '../images/LogoAsset4@330.png';
 
 const Navbar = (props) => {
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <div className='container-fluid'>
-          <a className='navbar-brand mb-0 h1' href='#'>
-            THE BEAUTY BOX
-          </a>
+          <Link to={'/'} className='navbar-brand mb-0 h1' href='#'>
+            <img
+              src={TBBLogo}
+              alt='The Beauty Box Logo by Antonio Jordi Honik'
+            />
+          </Link>
           <button
             className='navbar-toggler'
             type='button'

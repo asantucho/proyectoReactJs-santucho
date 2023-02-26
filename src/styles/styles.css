@@ -1,7 +1,8 @@
 header .navbar .container-fluid .navbar-brand {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-  font-size: 150%;
+  width: 20%;
+}
+header .navbar .container-fluid .navbar-brand img {
+  width: 60%;
 }
 header .navbar .container-fluid .navbar-collapse {
   justify-content: end;
@@ -119,7 +120,7 @@ main .item-list-container .card-container .card button .detail {
   font-weight: bold;
 }
 .count-container .amount-container .count-button:hover {
-  background-color: #3f612d;
+  background-color: #2a3c24;
 }
 .count-container .add-cart {
   background-color: rgb(107, 155, 53);
@@ -128,7 +129,7 @@ main .item-list-container .card-container .card button .detail {
   font-size: 1.5em;
 }
 .count-container .add-cart:hover {
-  background-color: #3f612d;
+  background-color: #2a3c24;
 }
 
 .detail-container {

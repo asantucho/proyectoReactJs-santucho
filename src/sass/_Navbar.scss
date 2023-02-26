@@ -2,10 +2,10 @@ header {
   .navbar {
     .container-fluid {
       .navbar-brand {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-          sans-serif;
-        font-weight: bold;
-        font-size: 150%;
+        width: 20%;
+        img {
+          width: 60%;
+        }
       }
       .navbar-collapse {
         justify-content: end;
