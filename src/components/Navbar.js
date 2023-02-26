@@ -2,8 +2,9 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import Search from './Search';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>

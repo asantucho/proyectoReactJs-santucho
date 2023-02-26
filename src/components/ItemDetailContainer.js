@@ -16,7 +16,14 @@ const ItemDetailContainer = () => {
     )
       .then((results) => results.json())
       .then((data) => {
-        setProduct(data.results);
+        if (id) {
+          const filteredProduct = data.results.find(
+            (product) => product.id === Number(id)
+          );
+          setProduct(filteredProduct);
+        } else {
+          setProduct(data.results);
+        }
       });
   }, [id]);
 

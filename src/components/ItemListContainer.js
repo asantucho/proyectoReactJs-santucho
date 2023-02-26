@@ -32,7 +32,7 @@ const ItemListContainer = () => {
                     src={`https://image.tmdb.org/t/p/original${product.poster_path}`}
                     alt={`${product.title}`}
                   />
-                  <button class='button-detail' id={`button-${product.id}`}>
+                  <button className='button-detail' id={`button-${product.id}`}>
                     <Link to={`item/${product.id}`} className='detail'>
                       Go to detail
                     </Link>
