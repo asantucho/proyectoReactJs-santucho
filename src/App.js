@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import AboutUs from './components/AboutUs';
 import { useEffect } from 'react';
 import Results from './components/Results';
+import { useState } from 'react';
 
 function App() {
   const [search, setSearch] = useState('');

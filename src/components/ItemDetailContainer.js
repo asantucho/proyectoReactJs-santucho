@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ItemCount from './ItemCount';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState('');
@@ -36,6 +37,7 @@ const ItemDetailContainer = () => {
       <div className='info-details'>
         <h3 className='title'>{product.title}</h3>
         <p className='description'>{product.overview}</p>
+        <ItemCount />
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 .count-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
+  margin-top: 3%;
   .amount-container {
     display: flex;
-    width: 35vw;
+    width: 25vw;
     .count-amount {
       display: flex;
       align-items: center;
@@ -24,12 +25,17 @@
       font-size: 1.5em;
       font-weight: bold;
     }
-  }
-  .add-cart-button-container {
-    display: flex;
-    .add-cart {
-      height: 100%;
-      background-color: red;
+    .count-button:hover {
+      background-color: #3f612d;
     }
+  }
+  .add-cart {
+    background-color: rgba(107, 155, 53, 1);
+    color: white;
+    width: 15vw;
+    font-size: 1.5em;
+  }
+  .add-cart:hover {
+    background-color: #3f612d;
   }
 }

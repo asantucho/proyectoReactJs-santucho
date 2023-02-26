@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Search = () => {
+const Search = (props) => {
   const [value, setValue] = useState('');
 
   const handleSubmit = (event) => {

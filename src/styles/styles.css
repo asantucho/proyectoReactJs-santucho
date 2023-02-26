@@ -92,12 +92,13 @@ main .item-list-container .card-container .card button .detail {
 .count-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
+  margin-top: 3%;
 }
 .count-container .amount-container {
   display: flex;
-  width: 35vw;
+  width: 25vw;
 }
 .count-container .amount-container .count-amount {
   display: flex;
@@ -117,12 +118,17 @@ main .item-list-container .card-container .card button .detail {
   font-size: 1.5em;
   font-weight: bold;
 }
-.count-container .add-cart-button-container {
-  display: flex;
+.count-container .amount-container .count-button:hover {
+  background-color: #3f612d;
 }
-.count-container .add-cart-button-container .add-cart {
-  height: 100%;
-  background-color: red;
+.count-container .add-cart {
+  background-color: rgb(107, 155, 53);
+  color: white;
+  width: 15vw;
+  font-size: 1.5em;
+}
+.count-container .add-cart:hover {
+  background-color: #3f612d;
 }
 
 .detail-container {
