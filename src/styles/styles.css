@@ -61,6 +61,33 @@ main .item-list-container {
   line-height: 1.5;
   text-align: center;
 }
+main .item-list-container .card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main .item-list-container .card-container .card {
+  border: 2px solid black;
+  margin: 1.5%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+main .item-list-container .card-container .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .item-list-container .card-container .card button {
+  width: 100%;
+  font-size: small;
+  font-weight: bold;
+  background-color: rgb(107, 155, 53);
+}
+main .item-list-container .card-container .card button .detail {
+  text-decoration: none;
+  color: black;
+}
 
 .count-container {
   display: flex;
@@ -79,7 +106,7 @@ main .item-list-container {
   width: 35%;
   border: solid black 2px;
   background-color: white;
-  font-size: medium;
+  font-size: large;
   font-weight: bold;
 }
 .count-container .amount-container .count-button {

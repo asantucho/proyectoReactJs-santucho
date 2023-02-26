@@ -1,5 +1,7 @@
 import React from 'react';
 import CartWidget from './CartWidget';
+import Search from './Search';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -23,40 +25,25 @@ const Navbar = () => {
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav mb-2 mb-lg-0'>
               <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
+                <Link to='/' className='nav-link active' aria-current='page'>
                   Home
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
-                  Trending
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
-                  Skincare
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
-                  Make Up
-                </a>
+                </Link>
               </li>
               <li className='nav-item cart-widget'>
                 <CartWidget number='5' />
               </li>
+              <li className='nav-item'>
+                <Link
+                  to={'/aboutus'}
+                  className='nav-link active'
+                  aria-current='page'
+                  href='#'
+                >
+                  About us
+                </Link>
+              </li>
             </ul>
-            <form className='d-flex'>
-              <input
-                className='form-control me-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-              />
-              <button className='btn btn-outline-success' type='submit'>
-                Search
-              </button>
-            </form>
+            <Search />
           </div>
         </div>
       </nav>
