@@ -1,4 +1,4 @@
-.item-list-container {
+.filtered-item-list-container {
   background: rgb(238, 246, 238);
   background: linear-gradient(
     90deg,
@@ -10,11 +10,11 @@
   font-weight: bold;
   line-height: 1.5;
   text-align: center;
-  .card-container {
+  .filtered-card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    .card {
+    .filtered-card {
       border: 2px solid black;
       margin: 1.5%;
       width: 15%;
@@ -29,7 +29,7 @@
         font-size: small;
         font-weight: bold;
         background-color: rgba(107, 155, 53, 1);
-        .detail {
+        .filtered-detail {
           text-decoration: none;
           color: black;
         }

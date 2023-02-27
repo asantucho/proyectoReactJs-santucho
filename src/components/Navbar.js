@@ -2,10 +2,9 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import Search from './Search';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import TBBLogo from '../images/LogoAsset4@330.png';
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -32,6 +31,15 @@ const Navbar = (props) => {
               <li className='nav-item'>
                 <Link to='/' className='nav-link active' aria-current='page'>
                   Home
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/category/:categoryId'
+                  className='nav-link active'
+                  aria-current='page'
+                >
+                  Pelis en español
                 </Link>
               </li>
               <li className='nav-item cart-widget'>

@@ -51,41 +51,76 @@ header .navbar .container-fluid .navbar-collapse form .btn {
   right: -7px;
 }
 
-main {
+.item-list-container {
   background: rgb(238, 246, 238);
   background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
-}
-main .item-list-container {
   padding: 10%;
   font-size: 200%;
   font-weight: bold;
   line-height: 1.5;
   text-align: center;
 }
-main .item-list-container .card-container {
+.item-list-container .card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-main .item-list-container .card-container .card {
+.item-list-container .card-container .card {
   border: 2px solid black;
   margin: 1.5%;
   width: 15%;
   display: flex;
   flex-direction: column;
 }
-main .item-list-container .card-container .card img {
+.item-list-container .card-container .card img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .item-list-container .card-container .card button {
+.item-list-container .card-container .card button {
   width: 100%;
   font-size: small;
   font-weight: bold;
   background-color: rgb(107, 155, 53);
 }
-main .item-list-container .card-container .card button .detail {
+.item-list-container .card-container .card button .detail {
+  text-decoration: none;
+  color: black;
+}
+
+.filtered-item-list-container {
+  background: rgb(238, 246, 238);
+  background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
+  padding: 10%;
+  font-size: 200%;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+}
+.filtered-item-list-container .filtered-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.filtered-item-list-container .filtered-card-container .filtered-card {
+  border: 2px solid black;
+  margin: 1.5%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.filtered-item-list-container .filtered-card-container .filtered-card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.filtered-item-list-container .filtered-card-container .filtered-card button {
+  width: 100%;
+  font-size: small;
+  font-weight: bold;
+  background-color: rgb(107, 155, 53);
+}
+.filtered-item-list-container .filtered-card-container .filtered-card button .filtered-detail {
   text-decoration: none;
   color: black;
 }
