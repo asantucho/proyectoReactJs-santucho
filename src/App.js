@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 import Results from './components/Results';
 import { useState } from 'react';
 import Cart from './components/Cart';
-import ItemListFiltered from './components/ItemListFiltered';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -33,11 +32,7 @@ function App() {
         <Navbar setSearch={setSearch} />
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
-          <Route
-            exact
-            path='/category/:original_language'
-            element={<ItemListFiltered />}
-          />
+          <Route path='/category/:category' element={<ItemListContainer />} />
           <Route
             exact
             path='/category/:original_language/item/:id'
@@ -46,7 +41,12 @@ function App() {
           <Route exact path='/item/:id' element={<ItemDetailContainer />} />
           <Route exact path='/cart' element={<Cart />} />
           <Route exact path='/aboutus' element={<AboutUs />} />
-          <Route exact path='/results' element={<Results />} />
+          <Route exact path='/search/:results' element={<Results />} />
+          <Route
+            exact
+            path='/search/:results/item/:id'
+            element={<ItemDetailContainer />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
