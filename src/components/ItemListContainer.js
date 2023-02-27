@@ -11,9 +11,8 @@ const ItemListContainer = () => {
   const [shouldFilter, setShouldFilter] = useState(false);
 
   const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
-  const location = useLocation();
 
-  const { category } = useParams();
+  const { categoryId } = useParams();
 
   useEffect(() => {
     fetch(
@@ -27,8 +26,7 @@ const ItemListContainer = () => {
   }, []);
 
   useEffect(() => {
-    if (location.pathname.startsWith('/category/')) {
-      const originalLanguage = location.pathname.slice('/category/'.length);
+    if (categoryId) {
       const filteredProducts = productList.filter(
         (product) => product.original_language === 'es'
       );
@@ -37,7 +35,7 @@ const ItemListContainer = () => {
     } else {
       setShouldFilter(false);
     }
-  }, [location.pathname, productList]);
+  }, [categoryId]);
 
   const products = shouldFilter ? filteredProductList : productList;
 

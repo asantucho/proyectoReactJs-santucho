@@ -32,7 +32,7 @@ function App() {
         <Navbar setSearch={setSearch} />
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
-          <Route path='/category/:category' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route
             exact
             path='/category/:original_language/item/:id'
