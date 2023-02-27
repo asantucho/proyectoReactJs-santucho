@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -28,7 +27,7 @@ const ItemListContainer = () => {
   useEffect(() => {
     if (categoryId) {
       const filteredProducts = productList.filter(
-        (product) => product.original_language === 'es'
+        (product) => product.original_language === categoryId
       );
       setFilteredProductList(filteredProducts);
       setShouldFilter(true);

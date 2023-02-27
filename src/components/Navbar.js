@@ -35,11 +35,20 @@ const Navbar = () => {
               </li>
               <li className='nav-item'>
                 <Link
-                  to='/category/:categoryId'
+                  to='/category/es'
                   className='nav-link active'
                   aria-current='page'
                 >
                   Pelis en español
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/category/en'
+                  className='nav-link active'
+                  aria-current='page'
+                >
+                  Pelis en ingles
                 </Link>
               </li>
               <li className='nav-item cart-widget'>
