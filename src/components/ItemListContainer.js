@@ -18,23 +18,23 @@ const ItemListContainer = () => {
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
     )
       .then((results) => results.json())
-      .then((data) => {
-        console.log(data);
-        setProductList(data.results);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (categoryId) {
-      const filteredProducts = productList.filter(
-        (product) => product.original_language === categoryId
+      .then(
+        (data) => {
+          console.log(data);
+          setProductList(data.results);
+          if (categoryId) {
+            const filteredProducts = productList.filter(
+              (product) => product.original_language === categoryId
+            );
+            setFilteredProductList(filteredProducts);
+            setShouldFilter(true);
+          } else {
+            setShouldFilter(false);
+          }
+        },
+        [categoryId]
       );
-      setFilteredProductList(filteredProducts);
-      setShouldFilter(true);
-    } else {
-      setShouldFilter(false);
-    }
-  }, [categoryId]);
+  });
 
   const products = shouldFilter ? filteredProductList : productList;
 

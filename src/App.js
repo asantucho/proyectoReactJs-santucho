@@ -32,10 +32,14 @@ function App() {
         <Navbar setSearch={setSearch} />
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
-          <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route
             exact
-            path='/category/:original_language/item/:id'
+            path='/category/:categoryId'
+            element={<ItemListContainer />}
+          />
+          <Route
+            exact
+            path='/category/:categoryId/item/:id'
             element={<ItemDetailContainer />}
           />
           <Route exact path='/item/:id' element={<ItemDetailContainer />} />
