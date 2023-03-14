@@ -9,6 +9,8 @@ const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
+  console.log(id);
+
   const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
 
   useEffect(() => {

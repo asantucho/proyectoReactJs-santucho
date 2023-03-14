@@ -35,20 +35,20 @@ const Navbar = () => {
               </li>
               <li className='nav-item'>
                 <Link
-                  to='/category/es'
+                  to='/category/skincare'
                   className='nav-link active'
                   aria-current='page'
                 >
-                  Pelis en español
+                  Skincare
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link
-                  to='/category/en'
+                  to='/category/make-up'
                   className='nav-link active'
                   aria-current='page'
                 >
-                  Pelis en ingles
+                  Make Up
                 </Link>
               </li>
               <li className='nav-item cart-widget'>

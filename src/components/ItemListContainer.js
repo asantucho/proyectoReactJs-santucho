@@ -3,38 +3,44 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import {
+  doc,
+  getDoc,
+  getDocs,
+  collection,
+  getFirestore,
+} from 'firebase/firestore';
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
   const [filteredProductList, setFilteredProductList] = useState([]);
   const [shouldFilter, setShouldFilter] = useState(false);
 
-  const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
-
   const { categoryId } = useParams();
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
-    )
-      .then((results) => results.json())
-      .then(
-        (data) => {
-          console.log(data);
-          setProductList(data.results);
-          if (categoryId) {
-            const filteredProducts = productList.filter(
-              (product) => product.original_language === categoryId
-            );
-            setFilteredProductList(filteredProducts);
-            setShouldFilter(true);
-          } else {
-            setShouldFilter(false);
-          }
-        },
-        [categoryId]
-      );
-  });
+    const db = getFirestore();
+    const tbbRef = collection(db, 'items');
+
+    getDocs(tbbRef).then((snapshot) => {
+      if (snapshot === 0) {
+        console.log('no results');
+      } else {
+        setProductList(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+        if (categoryId) {
+          const filteredProducts = productList.filter(
+            (product) => product.category === categoryId
+          );
+          setFilteredProductList(filteredProducts);
+          setShouldFilter(true);
+        } else {
+          setShouldFilter(false);
+        }
+      }
+    });
+  }, [productList, categoryId]);
 
   const products = shouldFilter ? filteredProductList : productList;
 
@@ -46,10 +52,7 @@ const ItemListContainer = () => {
           {products.map((product) => {
             return (
               <div className='card'>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${product.poster_path}`}
-                  alt={`${product.title}`}
-                />
+                <img src={product.imageId} alt={`${product.product}`} />
                 <button className='button-detail' id={`button-${product.id}`}>
                   <Link to={`item/${product.id}`} className='detail'>
                     Go to detail
