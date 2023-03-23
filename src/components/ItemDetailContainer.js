@@ -1,44 +1,50 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemCount from './ItemCount';
+import { getDocs, collection, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState('');
+  const [productDetail, setProductDetail] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const { id } = useParams();
 
-  console.log(id);
-
-  const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
-
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
-    )
-      .then((results) => results.json())
-      .then((data) => {
+    const db = getFirestore();
+    const tbbRef = collection(db, 'items');
+
+    getDocs(tbbRef).then((snapshot) => {
+      if (snapshot.size === 0) {
+        console.log('no results');
+      } else {
+        const products = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProductDetail(products);
+
         if (id) {
-          const filteredProduct = data.results.find(
-            (product) => product.id === Number(id)
-          );
-          setProduct(filteredProduct);
-        } else {
-          setProduct(data.results);
+          const filteredProduct = products.find((product) => product.id === id);
+          if (filteredProduct) {
+            setProductDetail(filteredProduct);
+          }
         }
-      });
+      }
+    });
   }, [id]);
+
+  if (id && dataLoaded) {
+    const filteredProduct = productDetail.find((product) => product.id == id);
+    setProductDetail(filteredProduct);
+  }
 
   return (
     <div className='detail-container'>
-      <img
-        src={`https://image.tmdb.org/t/p/original${product.poster_path}`}
-        alt={`${product.title}`}
-      />
+      <img src={productDetail.imageId} alt={`${productDetail.product}`} />
       <div className='info-details'>
-        <h3 className='title'>{product.title}</h3>
-        <p className='description'>{product.overview}</p>
+        <h3 className='title'>{productDetail.product}</h3>
+        <p className='description'>{productDetail.description}</p>
         <ItemCount />
       </div>
     </div>

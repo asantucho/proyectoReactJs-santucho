@@ -3,13 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import {
-  doc,
-  getDoc,
-  getDocs,
-  collection,
-  getFirestore,
-} from 'firebase/firestore';
+import { getDocs, collection, getFirestore } from 'firebase/firestore';
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
@@ -40,30 +34,28 @@ const ItemListContainer = () => {
         }
       }
     });
-  }, [productList, categoryId]);
+  }, [categoryId]);
 
   const products = shouldFilter ? filteredProductList : productList;
 
   return (
-    <main>
-      <div className='item-list-container'>
-        <h1>Check our most popular products</h1>
-        <div className='card-container'>
-          {products.map((product) => {
-            return (
-              <div className='card'>
-                <img src={product.imageId} alt={`${product.product}`} />
-                <button className='button-detail' id={`button-${product.id}`}>
-                  <Link to={`item/${product.id}`} className='detail'>
-                    Go to detail
-                  </Link>
-                </button>
-              </div>
-            );
-          })}
-        </div>
+    <div className='item-list-container'>
+      <h1>Check our most popular products</h1>
+      <div className='card-container'>
+        {products.map((product) => {
+          return (
+            <div className='card'>
+              <img src={product.imageId} alt={`${product.product}`} />
+              <button className='button-detail' id={`button-${product.id}`}>
+                <Link to={`item/${product.id}`} className='detail'>
+                  Go to detail
+                </Link>
+              </button>
+            </div>
+          );
+        })}
       </div>
-    </main>
+    </div>
   );
 };
 

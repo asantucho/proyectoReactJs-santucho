@@ -5,31 +5,32 @@ import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import AboutUs from './components/AboutUs';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import Results from './components/Results';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Cart from './components/Cart';
+import Footer from './components/Footer';
 
 function App() {
-  const [search, setSearch] = useState('');
-  const [results, setResults] = useState([]);
+  // const [search, setSearch] = useState('');
+  // const [results, setResults] = useState([]);
 
-  const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
+  // const apiKey = '2bfe34db0d27d97661602c0ccc0e3df3';
 
-  useEffect(() => {
-    if (search != '') {
-      fetch(
-        `https://api.themoviedb.org/3/search/multi?query=${search}&api_key=${apiKey}&language=en-US&page=1&include_adult=false`
-      )
-        .then((results) => results.json())
-        .then((data) => setResults(data.results));
-    }
-  }, [search]);
+  // useEffect(() => {
+  //   if (search != '') {
+  //     fetch(
+  //       `https://api.themoviedb.org/3/search/multi?query=${search}&api_key=${apiKey}&language=en-US&page=1&include_adult=false`
+  //     )
+  //       .then((results) => results.json())
+  //       .then((data) => setResults(data.results));
+  //   }
+  // }, [search]);
 
   return (
     <div className='App'>
       <BrowserRouter>
-        <Navbar setSearch={setSearch} />
+        <Navbar />
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
           <Route
@@ -52,6 +53,7 @@ function App() {
             element={<ItemDetailContainer />}
           />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
