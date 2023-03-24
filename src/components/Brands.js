@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
 import TheChemistLook from '../images/TCL_Logo-Horizontal-N.jpg';
-import Nars from '../images/NARS-LOGO.jpg';
+import Nars from '../images/NARS-LOGO.png';
 import Clinique from '../images/Clinique-Logo.png';
 import Dior from '../images/dior-logo.png';
 import JamesCharles from '../images/james-charles-logo.jpg';
@@ -23,6 +23,11 @@ const Brands = () => {
         }}
         modules={[Pagination]}
         className='mySwiper'
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
       >
         <SwiperSlide className='slide'>
           <img src={TheChemistLook} alt='The Chemist Look' />

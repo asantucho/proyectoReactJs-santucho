@@ -67,7 +67,7 @@ const Navbar = (props) => {
                 </Link>
               </li>
               <li className='nav-item cart-widget'>
-                <CartWidget number='5' />
+                <CartWidget />
               </li>
               <li className='nav-item'>
                 <Link

@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'Bauer Bodoni Roman';
+  src: url(../fonts/Bauer\ Bodoni\ Roman.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Bauer Bodoni Roman';
+  background-color: #daddd8;
 }

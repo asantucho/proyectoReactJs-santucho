@@ -1,10 +1,15 @@
+@font-face {
+  font-family: "Bauer Bodoni Roman";
+  src: url(../fonts/Bauer\ Bodoni\ Roman.otf);
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Bauer Bodoni Roman";
+  background-color: #daddd8;
 }
 
 header .navbar .container-fluid .navbar-brand {
@@ -173,14 +178,19 @@ header .navbar .container-fluid .navbar-collapse form .btn {
 
 .mySwiper {
   margin: 0;
+  background-color: white;
 }
 .mySwiper .swiper-wrapper {
   display: flex;
   height: 55vh;
+  width: 100%;
   align-items: center;
 }
 .mySwiper .swiper-wrapper .swiper-slide {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mySwiper .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -192,7 +202,6 @@ footer {
 }
 footer div {
   width: 100%;
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -200,4 +209,20 @@ footer div {
 }
 footer div img {
   width: 60%;
+}
+footer div #info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 150%;
+  font-weight: bold;
+}
+footer div #social-media svg {
+  width: 500%;
+  margin: 8%;
+}
+footer div #social-media svg path {
+  display: flex;
+  width: 600%;
 }/*# sourceMappingURL=styles.css.map */
