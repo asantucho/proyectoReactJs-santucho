@@ -6,7 +6,6 @@ import { getDocs, collection, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState([]);
-  const [dataLoaded, setDataLoaded] = useState(false);
 
   const { id } = useParams();
 
@@ -33,11 +32,6 @@ const ItemDetailContainer = () => {
       }
     });
   }, [id]);
-
-  if (id && dataLoaded) {
-    const filteredProduct = productDetail.find((product) => product.id == id);
-    setProductDetail(filteredProduct);
-  }
 
   return (
     <div className='detail-container'>

@@ -1,10 +1,25 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import Search from './Search';
 import { Link } from 'react-router-dom';
 import TBBLogo from '../images/LogoAsset4@330.png';
+import { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    setValue(props.search);
+  }, [props.search]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.setSearch(value);
+  };
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -65,7 +80,18 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <Search />
+            <form className='d-flex' onSubmit={handleSubmit}>
+              <input
+                className='form-control me-2'
+                type='search'
+                placeholder='Search'
+                aria-label='Search'
+                onChange={(event) => props.setSearch(event.target.value)}
+              />
+              <button className='btn btn-outline-success' type='submit'>
+                <Link to={'/results'}>Search</Link>
+              </button>
+            </form>
           </div>
         </div>
       </nav>

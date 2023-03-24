@@ -10,7 +10,7 @@ export const CartContext = createContext({
   getTotal: () => {},
 });
 
-const CartProvider = () => {
+const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
 
   const clearCart = () => {
@@ -36,7 +36,7 @@ const CartProvider = () => {
     }
   };
 
-  const removeFromCart = () => {
+  const removeFromCart = (id) => {
     const newCart = cart.filter((item) => item.id !== id);
     setCart(newCart);
   };

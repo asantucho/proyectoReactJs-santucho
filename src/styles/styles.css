@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
 header .navbar .container-fluid .navbar-brand {
   width: 20%;
 }
@@ -11,6 +20,9 @@ header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item {
   width: 6vw;
   margin: 0.5%;
   font-weight: bold;
+}
+header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:hover {
+  background-color: rgb(107, 155, 53);
 }
 header .navbar .container-fluid .navbar-collapse form {
   margin: 1%;
@@ -157,4 +169,35 @@ header .navbar .container-fluid .navbar-collapse form .btn {
 .detail-container .info-details .description {
   text-align: justify;
   line-height: 1.5;
+}
+
+.mySwiper {
+  margin: 0;
+}
+.mySwiper .swiper-wrapper {
+  display: flex;
+  height: 55vh;
+  align-items: center;
+}
+.mySwiper .swiper-wrapper .swiper-slide {
+  height: 100%;
+}
+.mySwiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+}
+footer div {
+  width: 100%;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer div img {
+  width: 60%;
 }/*# sourceMappingURL=styles.css.map */
