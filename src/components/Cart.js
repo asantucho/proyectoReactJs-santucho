@@ -26,7 +26,9 @@ const Cart = () => {
         <button type='button' onClick={() => clearCart()}>
           Empty cart
         </button>
-        <OrderForm items={cart} total={getTotal()} clearCart={clearCart()} />
+        <div>
+          <OrderForm items={cart} total={getTotal()} clearCart={clearCart} />
+        </div>
       </ul>
     </div>
   );

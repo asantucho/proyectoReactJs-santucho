@@ -3,7 +3,7 @@ import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
-const OrderForm = ({ items, total }) => {
+const OrderForm = ({ items, total, clearCart }) => {
   const [buyerName, setBuyerName] = useState('');
   const [buyerPhone, setBuyerPhone] = useState('');
   const [buyerEmail, setBuyerEmail] = useState('');
@@ -40,6 +40,7 @@ const OrderForm = ({ items, total }) => {
             text: <p>We sent you an email with the tracking number</p>,
             icon: 'success',
           });
+          clearCart();
           resetForm();
         })
         .catch((event) => {
@@ -56,38 +57,30 @@ const OrderForm = ({ items, total }) => {
   return (
     <div>
       <form className='order-form' onSubmit={handleSubmit}>
-        <label className='label-form'>
-          Name:
-          <input
-            type='text'
-            value={buyerName}
-            onChange={(event) => setBuyerName(event.target.value)}
-          />
-        </label>
-        <label className='label-form'>
-          Phone Number:
-          <input
-            type='text'
-            value={buyerPhone}
-            onChange={(event) => setBuyerPhone(event.target.value)}
-          />
-        </label>
-        <label className='label-form'>
-          Email address:
-          <input
-            type='text'
-            value={buyerEmail}
-            onChange={(event) => setBuyerEmail(event.target.value)}
-          />
-        </label>
-        <label className='label-form'>
-          Confirm Email address:
-          <input
-            type='text'
-            value={confirmEmail}
-            onChange={(event) => setConfirmEmail(event.target.value)}
-          />
-        </label>
+        <label className='label-form'>Full Name:</label>
+        <input
+          type='text'
+          value={buyerName}
+          onChange={(event) => setBuyerName(event.target.value)}
+        />
+        <label className='label-form'>Phone Number:</label>
+        <input
+          type='text'
+          value={buyerPhone}
+          onChange={(event) => setBuyerPhone(event.target.value)}
+        />
+        <label className='label-form'>Email address:</label>
+        <input
+          type='text'
+          value={buyerEmail}
+          onChange={(event) => setBuyerEmail(event.target.value)}
+        />
+        <label className='label-form'>Confirm Email address:</label>
+        <input
+          type='text'
+          value={confirmEmail}
+          onChange={(event) => setConfirmEmail(event.target.value)}
+        />
         <button type='submit'>Checkout</button>
       </form>
     </div>
