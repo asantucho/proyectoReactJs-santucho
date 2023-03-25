@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import CartProvider from './Context/CartContext';
 import Main from './components/Main';
-import Brands from './components/Brands';
+import Landing from './components/Landing';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -50,9 +50,8 @@ function App() {
         <BrowserRouter>
           <Navbar setSearch={setSearch} search={search} />
           <Main>
-            <Brands />
             <Routes>
-              <Route exact path='/' element={<ItemListContainer />} />
+              <Route exact path='/' element={<Landing />} />
               <Route
                 exact
                 path='/category/:categoryId'

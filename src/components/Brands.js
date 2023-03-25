@@ -44,7 +44,7 @@ const Brands = () => {
         <SwiperSlide className='slide'>
           <img src={Kylie} alt='Kylie' />
         </SwiperSlide>
-        <SwiperSlide className='slide'>
+        <SwiperSlide className='slide' id='jc-slide'>
           <img src={JamesCharles} alt='James Charles' />
         </SwiperSlide>
         <SwiperSlide className='slide'>
