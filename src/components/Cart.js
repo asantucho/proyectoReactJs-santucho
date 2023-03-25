@@ -1,6 +1,7 @@
 import React from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
+import OrderForm from './OrderForm';
 
 const Cart = () => {
   const { cart, getTotal, getTotalQuantity, clearCart, removeFromCart } =
@@ -25,7 +26,7 @@ const Cart = () => {
         <button type='button' onClick={() => clearCart()}>
           Empty cart
         </button>
-        <button type='button'>Checkout</button>
+        <OrderForm items={cart} total={getTotal()} clearCart={clearCart()} />
       </ul>
     </div>
   );

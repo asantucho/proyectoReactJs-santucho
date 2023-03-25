@@ -225,4 +225,15 @@ footer div #social-media svg {
 footer div #social-media svg path {
   display: flex;
   width: 600%;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  border: 1px solid black;
+}
+.order-form .label-form {
+  padding: 0.5%;
 }/*# sourceMappingURL=styles.css.map */

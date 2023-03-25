@@ -1,20 +1,97 @@
 import React, { useState } from 'react';
-import { getFirestore, colecction, addDoc, collection } from 'firebase/firestore';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const OrderForm = ({ items }) => {
-  const [buyerName, setBuyerName] = useState("");
-  const [buyerPhone, setBuyerPhone] = useState("")
-  const [buyerEmail, setBuyerEmail] = useState("")
-  const [selectedItems, setSelectedItems] = useState([])
-  const [total, setTotal] = useState(0)
+const OrderForm = ({ items, total }) => {
+  const [buyerName, setBuyerName] = useState('');
+  const [buyerPhone, setBuyerPhone] = useState('');
+  const [buyerEmail, setBuyerEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
 
-  const db = getFirestore()
-  const orderCollection = collection(db, "orders")
-    const handleSubmit = (event) => {
-        event.prevent
+  const resetForm = () => {
+    setBuyerName('');
+    setBuyerPhone('');
+    setBuyerEmail('');
+    setConfirmEmail('');
+  };
+
+  const db = getFirestore();
+  const orderCollection = collection(db, 'orders');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (buyerEmail === confirmEmail && items !== []) {
+      const order = {
+        buyer: {
+          name: buyerName,
+          phone: buyerPhone,
+          email: buyerEmail,
+        },
+        items: items,
+        total: total,
+      };
+      addDoc(orderCollection, order)
+        .then(() => {
+          const MySwal = withReactContent(Swal);
+
+          MySwal.fire({
+            title: <strong>Order placed successfully!</strong>,
+            text: <p>We sent you an email with the tracking number</p>,
+            icon: 'success',
+          });
+          resetForm();
+        })
+        .catch((event) => {
+          const MySwal = withReactContent(Swal);
+
+          MySwal.fire({
+            title: <strong>OOPS! Something went wrong!</strong>,
+            text: <i>Please try again later</i>,
+            icon: 'error',
+          });
+        });
     }
-  )
-  return <div>OrderForm</div>;
+  };
+  return (
+    <div>
+      <form className='order-form' onSubmit={handleSubmit}>
+        <label className='label-form'>
+          Name:
+          <input
+            type='text'
+            value={buyerName}
+            onChange={(event) => setBuyerName(event.target.value)}
+          />
+        </label>
+        <label className='label-form'>
+          Phone Number:
+          <input
+            type='text'
+            value={buyerPhone}
+            onChange={(event) => setBuyerPhone(event.target.value)}
+          />
+        </label>
+        <label className='label-form'>
+          Email address:
+          <input
+            type='text'
+            value={buyerEmail}
+            onChange={(event) => setBuyerEmail(event.target.value)}
+          />
+        </label>
+        <label className='label-form'>
+          Confirm Email address:
+          <input
+            type='text'
+            value={confirmEmail}
+            onChange={(event) => setConfirmEmail(event.target.value)}
+          />
+        </label>
+        <button type='submit'>Checkout</button>
+      </form>
+    </div>
+  );
 };
 
 export default OrderForm;
