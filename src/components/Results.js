@@ -1,27 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Results = (props) => {
-  if (props.results.length === 0) {
-    return <h3>No results found</h3>;
+const Results = ({ results, searchValue }) => {
+  if (results.length === 0) {
+    return <h3>No results found for "{searchValue}"</h3>;
   }
 
   return (
     <div className='results-container'>
-      <div className='result-card-container'>
-        {props.results.map((result) => (
-          <div className='result-card' key={result.id}>
+      <h3>Showing results for "{searchValue}"</h3>
+      <div className='card-container'>
+        {results.map((result) => (
+          <div className='card' key={result.id}>
             <img src={result.imageId} alt={`${result.product}`} />
             <div className='row'>
-              <div className='col-6'>{result.product}</div>
-              <div className='col-6'>${result.price}</div>
+              <div className='col-6 card-product'>{result.product}</div>
+              <div className='col-6 card-product'>${result.price}</div>
             </div>
-            <button
-              className='result-button-detail'
-              id={`result-button-${result.id}`}
-            >
-              <Link to={`/search/${result.id}`} className='result-detail'>
-                Go to detail
+            <button className='button-detail' id={`button-${result.id}`}>
+              <Link to={`/search/${result.id}`} className='detail'>
+                Learn more
               </Link>
             </button>
           </div>

@@ -21,7 +21,7 @@ const OrderForm = ({ items, total, clearCart }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (buyerEmail === confirmEmail && items !== []) {
+    if (buyerEmail === confirmEmail && items.length !== 0) {
       const order = {
         buyer: {
           name: buyerName,
@@ -37,7 +37,6 @@ const OrderForm = ({ items, total, clearCart }) => {
 
           MySwal.fire({
             title: <strong>Order placed successfully!</strong>,
-            text: <p>We sent you an email with the tracking number</p>,
             icon: 'success',
           });
           clearCart();
@@ -48,10 +47,13 @@ const OrderForm = ({ items, total, clearCart }) => {
 
           MySwal.fire({
             title: <strong>OOPS! Something went wrong!</strong>,
-            text: <i>Please try again later</i>,
             icon: 'error',
           });
         });
+    } else if (items.length === 0) {
+      alert('The cart is empty');
+    } else {
+      alert('Email adress and confirmation email do not match');
     }
   };
   return (
@@ -81,7 +83,9 @@ const OrderForm = ({ items, total, clearCart }) => {
           value={confirmEmail}
           onChange={(event) => setConfirmEmail(event.target.value)}
         />
-        <button type='submit'>Checkout</button>
+        <button className='cart-button' type='submit'>
+          Checkout
+        </button>
       </form>
     </div>
   );

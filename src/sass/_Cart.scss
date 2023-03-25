@@ -1,0 +1,45 @@
+.cart-container {
+  .row {
+    .cart-cards {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      ul {
+        .cart-item {
+          img {
+            width: 30%;
+          }
+          .card-info {
+            font-size: 110%;
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+          .card-qp-info {
+            font-weight: bold;
+            font-size: 110%;
+          }
+        }
+      }
+      .all-cart {
+        padding: 1%;
+        margin: 1%;
+        flex-direction: row;
+        .cart-total {
+          font-size: 110%;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.cart-button {
+  font-size: 110%;
+  font-weight: bold;
+  padding: 0.5%;
+  margin: 1.5%;
+  width: 60%;
+}
+.cart-button:hover {
+  background-color: rgba(107, 155, 53, 1);
+}

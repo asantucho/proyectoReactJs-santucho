@@ -16,7 +16,7 @@ header .navbar .container-fluid .navbar-brand {
   width: 20%;
 }
 header .navbar .container-fluid .navbar-brand img {
-  width: 60%;
+  width: 70%;
 }
 header .navbar .container-fluid .navbar-collapse {
   justify-content: end;
@@ -83,38 +83,61 @@ main {
 }
 
 .item-list-container {
-  background: rgb(238, 246, 238);
-  background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
-  padding: 10%;
+  background-color: rgb(238, 246, 238);
+  padding: 5%;
   font-size: 200%;
   font-weight: bold;
   line-height: 1.5;
-  text-align: center;
+  width: 100%;
 }
-.item-list-container .card-container {
+.item-list-container h1,
+.item-list-container h2 {
+  font-weight: bold;
+  margin: 1.5%;
+  padding: 0.5%;
+}
+
+.card-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  flex: 1 1;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.item-list-container .card-container .card {
-  border: 2px solid black;
+.card-container .card {
   margin: 1.5%;
-  width: 15%;
+  width: 22%;
   display: flex;
   flex-direction: column;
+  font-size: 52%;
+  text-align: center;
 }
-.item-list-container .card-container .card img {
+.card-container .card .row {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: inherit;
+}
+.card-container .card .row .card-product {
+  text-transform: capitalize;
+  font-size: 92%;
+}
+.card-container .card img {
+  border-radius: 7%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.item-list-container .card-container .card .button-detail {
+.card-container .card .button-detail {
   width: 100%;
   font-size: large;
   font-weight: bold;
-  background-color: rgb(107, 155, 53);
+  background-color: #d2e0bf;
+  border: none;
 }
-.item-list-container .card-container .card .button-detail .detail {
+.card-container .card .button-detail .detail {
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -218,7 +241,6 @@ main {
 footer {
   background-color: #98a886;
   width: 100%;
-  margin-top: 1%;
   padding-top: 0.5%;
 }
 footer div {
@@ -256,12 +278,15 @@ footer div #social-media a svg path {
 .order-form {
   padding: 1%;
   margin: auto;
+  margin-top: 15%;
+  margin-bottom: 15%;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   border: 1px solid black;
+  border-radius: 8%;
 }
 .order-form .label-form {
   padding: 0.5%;
@@ -282,40 +307,41 @@ footer div #social-media a svg path {
   font-weight: bold;
 }
 
-.results-container {
-  background: rgb(238, 246, 238);
-  background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
-  padding: 10%;
-  font-size: 200%;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-}
-.results-container .result-card-container {
+.cart-container .row .cart-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.results-container .result-card-container .result-card {
-  border: 2px solid black;
-  margin: 1.5%;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
+.cart-container .row .cart-cards ul .cart-item img {
+  width: 30%;
 }
-.results-container .result-card-container .result-card img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.results-container .result-card-container .result-card .result-button-detail {
-  width: 100%;
-  font-size: large;
+.cart-container .row .cart-cards ul .cart-item .card-info {
+  font-size: 110%;
   font-weight: bold;
-  background-color: rgb(107, 155, 53);
+  text-transform: capitalize;
 }
-.results-container .result-card-container .result-card .result-button-detail .result-detail {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+.cart-container .row .cart-cards ul .cart-item .card-qp-info {
+  font-weight: bold;
+  font-size: 110%;
+}
+.cart-container .row .cart-cards .all-cart {
+  padding: 1%;
+  margin: 1%;
+  flex-direction: row;
+}
+.cart-container .row .cart-cards .all-cart .cart-total {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.cart-button {
+  font-size: 110%;
+  font-weight: bold;
+  padding: 0.5%;
+  margin: 1.5%;
+  width: 60%;
+}
+
+.cart-button:hover {
+  background-color: rgb(107, 155, 53);
 }/*# sourceMappingURL=styles.css.map */

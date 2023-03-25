@@ -20,7 +20,6 @@ function App() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    console.log('Search input changed:', search);
     if (search != '') {
       const db = getFirestore();
       const tbbRef = collection(db, 'items');
@@ -68,7 +67,7 @@ function App() {
               <Route
                 exact
                 path='/:results'
-                element={<Results results={results} />}
+                element={<Results results={results} searchValue={search} />}
               />
               <Route
                 exact

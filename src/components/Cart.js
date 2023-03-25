@@ -8,28 +8,43 @@ const Cart = () => {
     useContext(CartContext);
 
   return (
-    <div>
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            <img src={item.imageId} alt={item.product} />
-            <h5>{item.product}</h5>
-            <h6>{item.brand}</h6>
-            <span>
-              {item.quantity} | ${item.price}
-            </span>
-            <button onClick={() => removeFromCart(item.id)}>Delete</button>
-          </li>
-        ))}
-        <p>Products: {getTotalQuantity()}</p>
-        <p>Total: ${getTotal()}</p>
-        <button type='button' onClick={() => clearCart()}>
-          Empty cart
-        </button>
-        <div>
+    <div className='cart-container'>
+      <div className='row'>
+        <div className='col-sm-12 col-md-6 col-lg-6 cart-cards'>
+          <ul>
+            {cart.map((item) => (
+              <li className='cart-item' key={item.id}>
+                <img src={item.imageId} alt={item.product} />
+                <h5 className='card-info'>{item.product}</h5>
+                <h6 className='card-info'>{item.brand}</h6>
+                <span className='card-qp-info'>
+                  {item.quantity} | ${item.price}
+                </span>
+                <button
+                  className='cart-button'
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className='all-cart'>
+            <h7 className='cart-total'>Products: {getTotalQuantity()}</h7>
+            <h7 className='cart-total'>Total: ${getTotal()}</h7>
+            <button
+              className='cart-button'
+              type='button'
+              onClick={() => clearCart()}
+            >
+              Empty cart
+            </button>
+          </div>
+        </div>
+        <div className='col-sm-12 col-md-6 col-lg-6 form-container'>
           <OrderForm items={cart} total={getTotal()} clearCart={clearCart} />
         </div>
-      </ul>
+      </div>
     </div>
   );
 };

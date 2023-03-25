@@ -59,11 +59,11 @@ const ItemDetailContainer = (props) => {
   };
 
   const handleAddToCart = (product) => {
-    const existingProduct = cart.find((item) => item.id === product.id);
-    if (!existingProduct) {
+    if (count > 0) {
       addToCart(product, count);
+      setCount(0);
     } else {
-      alert('The product is already in the cart!');
+      alert('You need to choose the amount first!');
     }
   };
 

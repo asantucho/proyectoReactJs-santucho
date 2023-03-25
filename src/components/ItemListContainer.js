@@ -40,19 +40,23 @@ const ItemListContainer = () => {
 
   return (
     <div className='item-list-container'>
-      <h1>Check our most popular products</h1>
+      {categoryId ? (
+        <h2>Checkout our {categoryId} products</h2>
+      ) : (
+        <h1>Welcome to The Beauty Box - take a look at our best sellers!</h1>
+      )}
       <div className='card-container'>
         {products.map((product) => {
           return (
             <div className='card'>
               <img src={product.imageId} alt={`${product.product}`} />
               <div className='row'>
-                <div className='col-6 '>{product.product}</div>
-                <div className='col-6'>${product.price}</div>
+                <div className='col-6 card-product'>{product.product}</div>
+                <div className='col-6 card-product'>${product.price}</div>
               </div>
               <button className='button-detail' id={`button-${product.id}`}>
                 <Link to={`item/${product.id}`} className='detail'>
-                  Go to detail
+                  Learn more
                 </Link>
               </button>
             </div>
