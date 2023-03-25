@@ -21,12 +21,15 @@ footer {
       font-weight: bold;
     }
     #social-media {
-      svg {
-        width: 500%;
-        margin: 8%;
-        path {
-          display: flex;
-          width: 600%;
+      font-size: 400%;
+      a {
+        margin: 5%;
+        text-decoration: none;
+        svg {
+          margin: 5%;
+          path {
+            display: flex;
+          }
         }
       }
     }

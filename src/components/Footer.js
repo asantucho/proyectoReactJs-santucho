@@ -16,8 +16,12 @@ const Footer = () => {
           <img src={boxLogo} alt='Box Logo' />
         </div>
         <div className='col-sm-12 col-md-4 col-lg-4' id='social-media'>
-          <VscGithub />
-          <BsLinkedin />
+          <a href='https://github.com/asantucho'>
+            <VscGithub />
+          </a>
+          <a href='https://www.linkedin.com/in/mar%C3%ADa-agustina-santucho-6520b9224/'>
+            <BsLinkedin />
+          </a>
         </div>
       </div>
     </footer>

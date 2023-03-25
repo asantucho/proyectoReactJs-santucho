@@ -230,13 +230,18 @@ footer div #info {
   font-size: 150%;
   font-weight: bold;
 }
-footer div #social-media svg {
-  width: 500%;
-  margin: 8%;
+footer div #social-media {
+  font-size: 400%;
 }
-footer div #social-media svg path {
+footer div #social-media a {
+  margin: 5%;
+  text-decoration: none;
+}
+footer div #social-media a svg {
+  margin: 5%;
+}
+footer div #social-media a svg path {
   display: flex;
-  width: 600%;
 }
 
 .order-form {
@@ -266,4 +271,42 @@ footer div #social-media svg path {
   margin: 3%;
   font-size: 120%;
   font-weight: bold;
+}
+
+.results-container {
+  background: rgb(238, 246, 238);
+  background: linear-gradient(90deg, rgb(238, 246, 238) 0%, rgb(107, 155, 53) 100%);
+  padding: 10%;
+  font-size: 200%;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+}
+.results-container .result-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.results-container .result-card-container .result-card {
+  border: 2px solid black;
+  margin: 1.5%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.results-container .result-card-container .result-card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.results-container .result-card-container .result-card .result-button-detail {
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgb(107, 155, 53);
+}
+.results-container .result-card-container .result-card .result-button-detail .result-detail {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
