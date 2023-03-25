@@ -16,7 +16,7 @@ const Cart = () => {
             <h5>{item.product}</h5>
             <h6>{item.brand}</h6>
             <span>
-              {item.quantity} | ${item.price * item.quantity}
+              {item.quantity} | ${item.price}
             </span>
             <button onClick={() => removeFromCart(item.id)}>Delete</button>
           </li>

@@ -10,7 +10,7 @@ const ItemDetailContainer = (props) => {
   const [productDetail, setProductDetail] = useState([]);
   const [count, setCount] = useState(0);
   const [stock, setStock] = useState(0);
-  const { addToCart } = useContext(CartContext);
+  const { cart, addToCart } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -18,26 +18,33 @@ const ItemDetailContainer = (props) => {
     const db = getFirestore();
     const tbbRef = collection(db, 'items');
 
-    getDocs(tbbRef).then((snapshot) => {
-      if (snapshot.size === 0) {
-        console.log('no results');
-      } else {
-        const products = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProductDetail(products);
+    getDocs(tbbRef).then(
+      (snapshot) => {
+        if (snapshot.size === 0) {
+          console.log('no results');
+        } else {
+          const products = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setProductDetail(products);
 
-        if (id) {
-          const filteredProduct = products.find((product) => product.id === id);
-          if (filteredProduct) {
-            setProductDetail(filteredProduct);
-            setStock(filteredProduct.stock);
+          if (id) {
+            const filteredProduct = products.find(
+              (product) => product.id === id
+            );
+            if (filteredProduct) {
+              setProductDetail(filteredProduct);
+              setStock(filteredProduct.stock);
+            } else {
+              setProductDetail(null);
+            }
           }
         }
-      }
-    });
-  }, [id]);
+      },
+      [id]
+    );
+  });
 
   const addButton = () => {
     if (count < stock) {
@@ -52,10 +59,15 @@ const ItemDetailContainer = (props) => {
   };
 
   const handleAddToCart = (product) => {
-    addToCart(product, count);
+    const existingProduct = cart.find((item) => item.id === product.id);
+    if (!existingProduct) {
+      addToCart(product, count);
+    } else {
+      alert('The product is already in the cart!');
+    }
   };
 
-  return (
+  return productDetail ? (
     <div className='detail-container'>
       <img src={productDetail.imageId} alt={`${productDetail.product}`} />
       <div className='info-details'>
@@ -77,6 +89,10 @@ const ItemDetailContainer = (props) => {
           </button>
         </div>
       </div>
+    </div>
+  ) : (
+    <div className='no-results'>
+      <h3>The product you are looking for does not exist</h3>
     </div>
   );
 };

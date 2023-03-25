@@ -25,6 +25,8 @@ header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item {
   width: 6vw;
   margin: 0.5%;
   font-weight: bold;
+  font-size: 110%;
+  text-align: center;
 }
 header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item:hover {
   background-color: rgb(107, 155, 53);
@@ -48,10 +50,13 @@ header .navbar .container-fluid .navbar-collapse form .btn a {
   display: flex;
   flex-direction: row;
   width: 2vw;
+  justify-content: center;
+  align-items: center;
 }
 .cart-widget .cart-icon {
   width: 25px;
   height: 25px;
+  text-align: center;
 }
 .cart-widget .product-amount {
   display: inline-block;
@@ -71,6 +76,10 @@ header .navbar .container-fluid .navbar-collapse form .btn a {
   position: absolute;
   top: -20px;
   right: -7px;
+}
+
+main {
+  min-height: 75vh;
 }
 
 .item-list-container {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import SwiperCore, { Autoplay } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,6 +12,7 @@ import Kielhs from '../images/Kiehls-Emblem.png';
 import Chanel from '../images/00-chanel-logo1.jpg';
 import Eucerin from '../images/eucerin-logo.png';
 import Kylie from '../images/Kylie-Jenner-Logo-2015.png';
+SwiperCore.use([Autoplay, Pagination]);
 
 const Brands = () => {
   return (
