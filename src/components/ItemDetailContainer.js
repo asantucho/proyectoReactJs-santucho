@@ -69,24 +69,28 @@ const ItemDetailContainer = (props) => {
 
   return productDetail ? (
     <div className='detail-container'>
-      <img src={productDetail.imageId} alt={`${productDetail.product}`} />
-      <div className='info-details'>
-        <h3 className='title'>{productDetail.product}</h3>
-        <h4 className='subtitle'>{productDetail.brand}</h4>
-        <p className='description'>{productDetail.description}</p>
-        <p className='price'>{`$${productDetail.price}`}</p>
-        <div className='count-container'>
-          <div className='amount-container'>
-            <Button text='-' manageClick={removeButton} />
-            <Count amount={count} />
-            <Button text='+' manageClick={addButton} />
+      <div className='info-details row'>
+        <div className='col-6'>
+          <img src={productDetail.imageId} alt={`${productDetail.product}`} />
+        </div>
+        <div className='col-6'>
+          <h4 className='title'>{productDetail.product}</h4>
+          <h5 className='subtitle'>{productDetail.brand}</h5>
+          <p className='description'>{productDetail.description}</p>
+          <p className='price'>{`$${productDetail.price}`}</p>
+          <div className='count-container'>
+            <div className='amount-container'>
+              <Button text='-' manageClick={removeButton} />
+              <Count amount={count} />
+              <Button text='+' manageClick={addButton} />
+            </div>
+            <button
+              className='add-cart'
+              onClick={() => handleAddToCart(productDetail, count)}
+            >
+              Add to cart
+            </button>
           </div>
-          <button
-            className='add-cart'
-            onClick={() => handleAddToCart(productDetail, count)}
-          >
-            Add to cart
-          </button>
         </div>
       </div>
     </div>

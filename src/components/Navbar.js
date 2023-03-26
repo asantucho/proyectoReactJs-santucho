@@ -16,10 +16,6 @@ const Navbar = (props) => {
     props.setSearch(value);
   };
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>

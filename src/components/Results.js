@@ -14,8 +14,8 @@ const Results = ({ results, searchValue }) => {
           <div className='card' key={result.id}>
             <img src={result.imageId} alt={`${result.product}`} />
             <div className='row'>
-              <div className='col-6 card-product'>{result.product}</div>
-              <div className='col-6 card-product'>${result.price}</div>
+              <div className='col-6 result-card'>{result.product}</div>
+              <div className='col-6 result-card'>${result.price}</div>
             </div>
             <button className='button-detail' id={`button-${result.id}`}>
               <Link to={`/search/${result.id}`} className='detail'>

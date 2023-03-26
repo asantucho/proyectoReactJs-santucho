@@ -5,23 +5,40 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px solid rgba(107, 155, 53, 1);
   box-shadow: 2px black;
-  img {
-    width: 15%;
-  }
   .info-details {
     padding: 2%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    .title {
-      font-size: 200%;
-      text-decoration: underline;
-    }
-    .description {
-      text-align: justify;
-      line-height: 1.5;
+    align-items: center;
+    width: 60%;
+    background-color: #f0f7ee;
+    border-radius: 2%;
+    div {
+      img {
+        width: 75%;
+        border-radius: 5%;
+        align-self: center;
+      }
+      .title {
+        font-size: 200%;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      .subtitle {
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 150%;
+      }
+      .description {
+        text-align: justify;
+        line-height: 1.5;
+        font-size: 150%;
+        font-weight: bold;
+      }
+      .price {
+        font-weight: bold;
+      }
     }
   }
 }
