@@ -1,3 +1,39 @@
+# E-commerce de cosmética
+
+# Descripción
+
+Este es un proyecto de e-commerce que vende productos de cosmética. Los usuarios pueden filtrar productos por categoría (skincare y make-up), buscar productos por palabras clave y agregar productos al carrito. Para confirmar la compra, los usuarios deben llenar un formulario.
+
+# Tecnologías utilizadas
+
+ReactJS
+Bootstrap (para los estilos iniciales)
+Firebase (para la base de datos)
+React Icons (para agregar íconos al sitio web)
+Sweet Alert (para mostrar alertas personalizadas)
+Swiper (para el carrusel de marcas)
+
+# Instalación
+
+Para instalar la aplicación, siga estos pasos:
+
+Clone el repositorio a su máquina local.
+Instale las dependencias ejecutando el comando npm install.
+Cree una cuenta de Firebase y configure la base de datos para su proyecto. Luego, agregue las credenciales de Firebase en un archivo .env en la raíz del proyecto (consulte el archivo .env.example para ver cómo debe ser estructurado el archivo .env).
+Inicie la aplicación ejecutando el comando npm start.
+
+# Funcionalidades
+
+Filtrado por categoría: Los usuarios pueden filtrar los productos por categoría (skincare o make-up).
+Búsqueda por palabras clave: Los usuarios pueden buscar productos por palabras clave.
+Ir al detalle: apretando el botón para aprender más sobre el producto, el usuario será redirigido al detalle del producto en particular seleccionado, donde le aparecerá también la posibilidad de seleccionar una cantidad y agregar al carrito.
+Agregar productos al carrito: Los usuarios pueden agregar productos al carrito haciendo clic en el botón "Add to cart" en el componente ItemDetailContainer, luego de haber seleccionado una cantidad mayor a 0 en el contador.
+Confirmación de la compra: Los usuarios deben llenar un formulario para confirmar la compra, el cual será submitido y aparecerá un modal señalando el resultado de la operación. En caso exitoso, el carrito se vaciará y la orden será enviada a una nueva colección el firestore.
+
+# Agradecimientos
+
+Gracias al profe, al tutor corrector por sus tips y a mis compañeros de cursada.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
